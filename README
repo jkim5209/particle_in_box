@@ -1,0 +1,14 @@
+Jaeyoon Kim
+University of Michigan
+jaeykim@umich.edu
+
+This is a quantum mechanics simulation
+
+It take an initial wavefunction as an input
+Then simulates the time evolution of probability density according to Schordinger's Equation
+for 1 dimensional particle in a box with infinite potential wall at x = 0 and x = L
+-hBar^2 / 2m gradient(psi) = E * psi = i partial (psi) / partial (time)
+
+The input function should follow the usual restrictions on the wave functions
+psi should be infinitely differentiable
+Boundary conditions: psi(0) = psi(L) = 0 
