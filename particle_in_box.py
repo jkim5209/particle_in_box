@@ -14,8 +14,13 @@ import numpy as np
 # Should be in strings with x as the variable
 # Function f should be infinitely differentiable
 # and have values close to 0 at x = 0 and x = L
-f1 = "( np.sin(3* np.pi * x / L))"
-f2 = "( np.e**(-(x-3)**2) )"
+f1 = "( np.sin(3 * np.pi * x / L))"
+f2 = "( np.e ** (-(x - 3) ** 2) )"
+f3 = "( x * np.sin(5 * np.pi * x / L ) )"
+f4 = "( np.sin( np.pi * x ** 3 / L ** 3 ) )"
+
+# Actual function that is to be evaluated
+psi = f2
 
 # Constant Declaration
 L=10.0                          # length of the box
@@ -26,13 +31,11 @@ h = 1                           # 6.626*10**-34 planck's constant
 hBar = h / (2 * np.pi)
 m = 1                           # mass. for an electron, 9.109*10**-31
 
-# Actual function that is to be evaluated
-psi = f2
 
 # Input function f (in strings with x as a variable) integrate from a to b
 # Uses Reimann sum limits
 def integrate(f):
-    total=0
+    total=0.0
     for i in range(numBoxes):
         x = dx*i
         total = total + eval(f)*dx
@@ -45,7 +48,7 @@ def wave(n):
 
 # Returns the normalization constant of psi
 def normalConst(psi):
-    return str(1 / integrate( psi + "*" + psi) )
+    return str(1.0 / np.sqrt(integrate( psi + "*" + psi)) )
         
 # Normalize psi
 psi = normalConst(psi) + "*"+ psi
@@ -93,7 +96,6 @@ plt.ion()
 fig = plt.figure()
 ax = fig.add_subplot(111)
 line, = ax.plot(xs, prob(0), 'r-')
-
 for t in range(5000):
     scaleFactor = 10
     line.set_ydata(prob(t * scaleFactor))
