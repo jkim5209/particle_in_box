@@ -19,7 +19,6 @@ f2 = "( np.e ** (-(x - 3) ** 2) )"
 f3 = "( x * np.sin(5 * np.pi * x / self.L ) )"
 f4 = "( np.sin( np.pi * x ** 3 / self.L ** 3 ) )"
 
-# Actual function that is to be evaluated
 
 # Global constants
 h = 1                           # 6.626*10**-34 planck's constant
@@ -105,11 +104,6 @@ class Wavefunction:
             line.set_ydata(psi.prob(t * scaleFactor))
             fig.canvas.draw()
         plt.close()        
-
-    
-
-
-
 
 psi = Wavefunction(f2, particle_in_box, 10, 500, 40, 1)
 psi.simulate(0,500,10)
