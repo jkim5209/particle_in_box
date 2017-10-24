@@ -12,3 +12,8 @@ for 1 dimensional particle in a box with infinite potential wall at x = 0 and x 
 The input function should follow the usual restrictions on the wave functions
 psi should be infinitely differentiable
 Boundary conditions: psi(0) = psi(L) = 0 
+
+Generalization:
+One can easily add orthonormal basis of solutions to Schrodinger's equation for arbituary potential and run the simulation. The simulation is is restricted from 0 to L.
+
+psi should be represented as a string in variable of x. Any other variables that is part of the object such as L should be written as self.L.
