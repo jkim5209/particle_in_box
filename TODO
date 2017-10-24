@@ -3,3 +3,4 @@ TODO:
 1) Optimize particle_in_box.py
 2) Create a 2D version
 3) Display the values of certain operators such as position and momentum
+4) Add variaty of orthonormal basis for different potentials
